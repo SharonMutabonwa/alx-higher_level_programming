@@ -6,6 +6,6 @@ if __name == "__main__":
     b = 5
 
 print("{} + {} = {}".formate(a, b, add(a, b)))
-print("{} + {} = {}".formate(a, b, sub(a, b)))
-print("{} + {} = {}".formate(a, b, mul(a, b)))
-print("{} + {} = {}".formate(a, b, div(a, b)))
+print("{} - {} = {}".formate(a, b, sub(a, b)))
+print("{} * {} = {}".formate(a, b, mul(a, b)))
+print("{} / {} = {}".formate(a, b, div(a, b)))
