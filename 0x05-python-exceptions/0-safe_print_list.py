@@ -5,7 +5,7 @@ def safe_print_list(my_list=[], x=0):
         try:
             print("{:d}".format(my_list[i], end=""))
             count += 1
-        except indexError:
-            print('Not real number')
+        except:
+            pass
     print(" ")
     return count
