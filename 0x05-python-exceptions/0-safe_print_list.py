@@ -8,5 +8,4 @@ def safe_print_list(my_list=[], x=0):
         except Exception as error:
             break
     print('')
-    return count
-
+    return count§
