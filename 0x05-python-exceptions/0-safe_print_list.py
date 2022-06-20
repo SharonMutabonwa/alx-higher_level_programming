@@ -5,6 +5,6 @@ def safe_print_list(my_list=[], x=0):
     except NotRealNumber:
         print("The number is not real ")
     else:
-        print("{}.format(x)")
+        print("{:d}.format(x)")
     finally:
         print(" ")
