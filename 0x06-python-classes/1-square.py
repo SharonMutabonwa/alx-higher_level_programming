@@ -2,6 +2,7 @@
 
 '''Square class module'''
 
+
 class Square:
     '''class Square that defines a square
     Private instance attribute: size
