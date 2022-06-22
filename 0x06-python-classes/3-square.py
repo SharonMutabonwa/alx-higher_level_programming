@@ -7,7 +7,7 @@ class Square:
     '''Represents a square class
     Private instance attribute: size
     Instantiation with optional size'''
-    def __init__(self, size=data):
+    def __init__(self, size=0):
         '''Initializing square object'''
 
         if not isinstance(size, int):
