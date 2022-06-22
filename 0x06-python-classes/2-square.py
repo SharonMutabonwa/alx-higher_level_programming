@@ -9,6 +9,7 @@ class Square:
     Instantiation with optional size'''
 
     def __init__(self, size=0):
+        '''Initializing square object'''
         if size not int:
             raise TypeError("size must be an integer")
         elif size < 0:
