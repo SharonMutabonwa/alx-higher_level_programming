@@ -1,11 +1,7 @@
 #!/usr/bin/python3
-
-'''This module represents a class Square module'''
-
-
 class Square:
-    '''Represents a square class
-    Private instance attribute: size
+    """Represents a square.
+    Private instance attribute: size:
         - property def size(self)
         - property setter def size(self, value)
     Private instance attribute: position:
@@ -13,10 +9,12 @@ class Square:
         - property setter def position(self, value)
     Instantiation with optional size and optional position.
     Public instance method: def area(self).
-    Public instance method: def my_print(self).'''
-    def __init__(self, size=0):
-        '''Initializing square object'''
-        self.__size = size
+    Public instance method: def my_print(self).
+    """
+
+    def __init__(self, size=0, position=(0, 0)):
+        """Initializes the data."""
+        self.size = size
         self.position = position
 
     @property
@@ -27,7 +25,6 @@ class Square:
     @size.setter
     def size(self, value):
         """Sets the size to a value."""
-
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -51,11 +48,13 @@ class Square:
         self.__position = value
 
     def area(self):
-        '''Returns the current square area'''
+        """Returns the current square area."""
         return self.__size ** 2
 
     def my_print(self):
-        """Prints to stdout the square with the character #."""
+        """Prints to stdout the square with the character #,
+        at the position given by the position attribute.
+        """
         if self.__size == 0:
             print()
             return
