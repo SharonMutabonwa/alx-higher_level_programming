@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-class LockedClass:
+'''Represents a locked class module'''
 
+
+class LockedClass:
+    '''Initializing data'''
     __slots__ = ['first_name']
 
     def __init__(self, first_name=''):
