@@ -12,6 +12,6 @@ class Rectangle(BaseGeometry):
         '''Initialising an instance'''
 
         self.integer_validator("width", width)
-        selt.integer_validator("height", height)
         self.__width = width
+        selt.integer_validator("height", height)
         self.__height = height
