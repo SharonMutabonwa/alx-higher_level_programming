@@ -2,6 +2,16 @@
 Test Cases for 1-my_list module
 ==================================
 
+Import the 1-my_list module
+=====================================
+::
+        >>> MyList = __import__('1-my_list').MyList
+
+checking if docs are present
+        >>> Mdocs = __import__('1-my_list').__doc__
+        >>> len(Mdocs) > 5
+        True
+
 Checking for module docstring:
          >>> m = __import__("1-my_list").__doc__
          >>> len(m) > 1
@@ -13,70 +23,54 @@ Checking for class docstring:
          True
 
 Checking for method docstring:
-	  >>> mod = __import__("1-my_list").MyList.print_sorted.__doc__
-	  >>> len(mod) > 1
-	  True
+	 >>> mod = __import__("1-my_list").MyList.print_sorted.__doc__
+	 >>> len(mod) > 1
+	 True
 
-Checking that MyList inherits from list:
-	  >>> issubclass(MyList, list)
-	  True
+checking normal implementation when list is passed
+        >>> my_list = MyList()
+        >>> my_list.append(2)
+        >>> my_list.append(0)
+        >>> my_list.append(5)
+        >>> my_list.print_sorted()
+        [0, 2, 5]
 
-Checking for empty list:
-	  >>> l = MyList()
-	  >>> l.print_sorted()
-	  []
+checking subclasses
 
-Checking that appendng works:
-	  >>> l.append(1)
-	  >>> l.append(2)
-	  >>> l.append(3)
-	  >>> l.append(4)
-	  >>> print(l)
-	  [1, 2, 3, 4]
+        >>> my_list = MyList()
+        >>> issubclass(my_list.__class__, list)
+        True
 
-Checking for list already in correct order:
-	  >>> l.print_sorted()
-	  [1, 2, 3, 4]
+checking when numbers are placed in reverse order
 
-Checking for reversed order list:
-	  >>> l = MyList()
-	  >>> l.append(4)
-	  >>> l.append(3)
-	  >>> l.append(2)
-	  >>> l.append(1)
-	  >>> print(l)
-	  [4, 3, 2, 1]
-	  >>> l.print_sorted()
-	  [1, 2, 3, 4]
-	  >>> print(l)
-	  [4, 3, 2, 1]
+        >>> my_list = MyList()
+        >>> my_list.extend([5, 4, 3, 2, 1])
+        >>> my_list.print_sorted()
+        [1, 2, 3, 4, 5]
 
-Checking for one negative number:
-	  >>> l.append(-1)
-	  >>> l.append(5)
-	  >>> print(l)
-	  [4, 3, 2, 1, -1, 5]
-	  >>> l.print_sorted()
-	  [-1, 1, 2, 3, 4, 5]
-	  >>> print(l)
-	  [4, 3, 2, 1, -1, 5]
+checking when numbers are negative integers
 
-Checking for all negative numbers:
-	  >>> l = MyList()
-	  >>> l.append(-10)
-	  >>> l.append(-1)
-	  >>> l.append(-7)
-	  >>> l.append(-2)
-	  >>> l.append(-8)
-	  >>> print(l)
-	  [-10, -1, -7, -2, -8]
-	  >>> l.print_sorted()
-	  [-10, -8, -7, -2, -1]
-	  >>> print(l)
-          [-10, -1, -7, -2, -8]
+        >>> my_list = MyList()
+        >>> my_list.extend([-2, -1, -5, -3])
+        >>> my_list.print_sorted()
+        [-5, -3, -2, -1]
 
-Checking for too many arguments:
-	  >>> l.print_sorted(1)
-	  Traceback (most recent call last):
-	  ...
-	  TypeError: print_sorted() takes 1 positional argument but 2 were give
+checking when list is empty
+
+        >>> m_list = MyList()
+        >>> m_list.print_sorted()
+        []
+
+checking when list is a mixture of both positive and negative integers
+
+        >>> m_list = MyList()
+        >>> m_list.extend([2, -3, 5, -5])
+        >>> m_list.print_sorted()
+        [-5, -3, 2, 5]
+
+checking for too many arguments
+
+        >>> m_list.print_sorted(3)
+        Traceback (most recent call last):
+        ...
+        TypeError: print_sorted() takes 1 positional argument but 2 were given
