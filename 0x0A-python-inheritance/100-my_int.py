@@ -5,7 +5,7 @@
 class MyInt(int):
     '''This module inherits from class int'''
 
-    def __eq__(self, value):
+    def __eq__(self, other):
         '''defines Equality(== operator)'''
 
         return int.__ne__(self, other)
