@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""This module represents a class Square that inherits
-from Rectangle"""
+"""This module represents a class Square
+that inherits from Rectangle"""
 
 Rectangle = __import__('9-rectangle').Rectangle
 '''Importing the inherited class'''
